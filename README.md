@@ -1,8 +1,8 @@
 # flight-data-attributes
 
-[![Build Status](https://secure.travis-ci.org/<username>/flight-data-attributes.png)](http://travis-ci.org/<username>/flight-data-attributes)
+[![Build Status](https://secure.travis-ci.org/<username>/flight-data-attributes.png)](http://travis-ci.org/rogeliog/flight-data-attributes)
 
-A [Flight](https://github.com/flightjs/flight) component for…
+A [Flight](https://github.com/flightjs/flight) component for setting the component defaultAttrs from the attached element data attributes.
 
 ## Installation
 
@@ -12,7 +12,25 @@ bower install --save flight-data-attributes
 
 ## Example
 
-…
+```html
+  <div class="tweet" data-user-id="1" data-tweet-id="2" data-screen-name="John"></div>
+```
+
+```javascript
+var withDataAttributes = require('path/to/with_data_attributes');
+
+var MyComponent = defineComponent(withDataAttributes);
+
+MyComponent.attachTo(".tweet");
+```
+
+So now we have all these data attributes set in the component.
+
+```javascript
+  this.attr.userId == 1
+  this.attr.tweetId == 2
+  this.attr.screenName == "John"
+```
 
 ## Development
 
